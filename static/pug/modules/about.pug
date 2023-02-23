@@ -4,11 +4,8 @@ section.about
     .container  
         h2.about__title.section__title О нас
         ul.about__list
+            each slogan in slogans
             li.about__item
                 .about__wrapper
-                    h3.about__heading #{about[0].heading}
-                    p.about__text #{about[0].text}
-            li.about__item
-                .about__wrapper
-                    h3.about__heading #{about[1].heading}
-                    p.about__text #{about[1].text}
+                    h3.about__heading #{slogan.heading}
+                    p.about__text #{slogan.text}
