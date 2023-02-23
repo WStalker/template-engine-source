@@ -1,3 +1,8 @@
+mixin bullet(name, active)
+    li.slider__bullet
+        button.slider__bullet-button(class=active ? "slider__bullet-button--active" : "")
+            span.visually-hidden #{name}
+
 section.hero
     .container
         .hero__slider.slider
@@ -12,12 +17,9 @@ section.hero
                         height="633"
                         alt="Картинка книга Пиши, сокращай")
             ul.slider__bullets
-                li.slider__bullet
-                    button.slider__bullet-button.slider__bullet-button--active #[span.visually-hidden Первый слайд]
-                li.slider__bullet
-                    button.slider__bullet-button #[span.visually-hidden Второй слайд]
-                li.slider__bullet
-                    button.slider__bullet-button #[span.visually-hidden Третий слайд]
+                +bullet("Первый слайд", true)
+                +bullet("Второй слайд")
+                +bullet("Третий слайд")
             ul.slider__arrows
                 li.slider__arrow
                     button.slider__arrow-button.slider__arrow-button--prev #[span.visually-hidden Переключить на предыдущий слайд]
